@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Local Reader</string>
+    <string name="no_folder">No Manga Folder</string>
+    <string name="folder_exist">Available Manga</string>
+    <string name="nav_button">Dummy Button</string>
+    <string name="next_button">Next</string>
+    <string name="prev_button">Prev</string>
+</resources>
