@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -118,6 +119,7 @@ public class ChapterReader extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_chapter_reader);
+        Log.i("WARN", "oncreate");
 
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
@@ -128,11 +130,13 @@ public class ChapterReader extends AppCompatActivity {
         //Meaningful logic:
         Bundle param = getIntent().getExtras();
         String pathname = param.getString("pathname");
+        Log.i("pathname:", pathname);
         File directory = new File(pathname);
         LinearLayout page_holder = (LinearLayout) findViewById(R.id.pages_holder);
         page_holder.addView(createButtonBar());
         File[] pageList = directory.listFiles();
         Arrays.sort(pageList);
+        Log.i("image list:", String.valueOf(pageList.length));
         for (File page : pageList){
             Bitmap bit = BitmapFactory.decodeFile(page.getAbsolutePath());
             ImageView img = new ImageView(this);

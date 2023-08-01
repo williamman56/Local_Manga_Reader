@@ -3,6 +3,7 @@ package com.example.localreader;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ public class ChapterBrowser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapter_browser);
+        Log.i("test", "test");
 
         Bundle param = getIntent().getExtras();
         current_path = param.getString("pathname");
